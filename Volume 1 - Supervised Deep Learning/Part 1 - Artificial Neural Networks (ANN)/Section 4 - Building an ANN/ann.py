@@ -119,3 +119,41 @@ new_prediction = (new_prediction > 0.5)
 # Making Confusion Matrix
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
+
+# Evalute the ANN
+from keras.wrappers.scikit_learn import KerasClassifier
+from sklearn.model_selection import cross_val_score
+
+# Function to build classifier ( ANN )
+def build_classifier():
+    # Initialise the ANN
+    classifier = Sequential()
+    
+    # Adding input layer and first hidden layer
+    # output dim -> (inputs + 1)/2
+    # activation -> rectivation -> relu
+    classifier.add(Dense(6, kernel_initializer='uniform', activation ='relu', input_dim = 11))
+    
+    # Adding second hidden layer
+    classifier.add(Dense(6, kernel_initializer='uniform', activation = 'relu'))
+    
+    # Adding output layer use of sigmoid function
+    classifier.add(Dense(1, kernel_initializer='uniform', activation = 'sigmoid'))
+    
+    # Compile the ANN 
+    # compile(optimiser, loss, metrics=[], weight)
+    # optimiser -> algorithm for calculating weights
+    classifier.compile(optimizer= 'adam', loss = 'binary_crossentropy',
+                       metrics = ['accuracy'])
+    
+    return classifier
+
+# running n_jobs will run all cpus at the same time at -1 value
+# running the classifier on 10 folds in small batches   
+classifier = KerasClassifier(build_fn = build_classifier, batch_size = 10, nb_epoch=100)
+accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = 10,
+                             n_jobs = -1)
+
+# getting mean and variance for visualising in the bias_variance trade off
+mean = accuracies.mean()
+variance = accuracies.std()
