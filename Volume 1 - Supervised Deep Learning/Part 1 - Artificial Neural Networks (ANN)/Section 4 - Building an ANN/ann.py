@@ -81,6 +81,7 @@ X_test = sc.transform(X_test)
 import keras
 from keras.models import Sequential
 from keras.layers import Dense
+from keras.layers import Dropout
 
 # Initialise the ANN
 classifier = Sequential()
@@ -89,9 +90,11 @@ classifier = Sequential()
 # output dim -> (inputs + 1)/2
 # activation -> rectivation -> relu
 classifier.add(Dense(6, kernel_initializer='uniform', activation ='relu', input_dim = 11))
+classifier.add(Dropout(p = 0.1))
 
 # Adding second hidden layer
 classifier.add(Dense(6, kernel_initializer='uniform', activation = 'relu'))
+classifier.add(Dropout(p = 0.1))
 
 # Adding output layer use of sigmoid function
 classifier.add(Dense(1, kernel_initializer='uniform', activation = 'sigmoid'))
@@ -157,3 +160,5 @@ accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, c
 # getting mean and variance for visualising in the bias_variance trade off
 mean = accuracies.mean()
 variance = accuracies.std()
+
+# Dropout regulation 
