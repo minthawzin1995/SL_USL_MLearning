@@ -14,6 +14,8 @@ is then plotted using matplotlib to get the visualisation of the graph.
 
 - Unsupervised Folder 
 
-(1) Self-Organizing Map -> SOM uses MiniSom Python file to create a SOM and it is referenced from test.pypi.org. Project involves making two BMUs and gathering potential frauds in a banking database.
+(1) Self-Organizing Map -> SOM uses MiniSom Python file to create a SOM and it is referenced from test.pypi.org. Project involves making two BMUs and gathering potential frauds in a banking database. Hybrid Machine Learning system is also implemented through the use of ANN and SOMs to generate a list of potential frauds with the probability of the frauds happening calculated through ANN.
+
+
 
 
