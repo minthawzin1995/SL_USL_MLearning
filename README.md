@@ -1,7 +1,5 @@
 # AI. Machine Learning Projects
 
-# Divided into two categories of supervised and unsupervised folders
-
 - Supervised Folder  -> uses Keras Library and Tensorflow
 
 (1) Artificial Neural Network -> ANN is implemented through the use of Keras Library and Tensorflow backend. Dataset is obtained through
