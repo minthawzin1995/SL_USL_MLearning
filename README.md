@@ -13,4 +13,6 @@ is based on google stock prediction and uses the dataset to train the neural net
 is then plotted using matplotlib to get the visualisation of the graph.
 
 - Unsupervised Folder
+(1) Self-Organizing Map -> SOM uses MiniSom Python file to create a SOM and it is referenced from test.pypi.org. Project involves making two BMUs and gathering potential frauds in a banking database.
+
 
