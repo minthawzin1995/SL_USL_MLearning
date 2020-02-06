@@ -17,5 +17,5 @@ is then plotted using matplotlib to get the visualisation of the graph.
 (1) Self-Organizing Map -> SOM uses MiniSom Python file to create a SOM and it is referenced from test.pypi.org. Project involves making two BMUs and gathering potential frauds in a banking database. Hybrid Machine Learning system is also implemented through the use of ANN and SOMs to generate a list of potential frauds with the probability of the frauds happening calculated through ANN.
 
 
-
+(2) Restricted Boltzmann Machine -> RBM uses dataset from https://grouplens.org/datasets/movielens/ to get the list of movies. It is then added to the boltmann machine and the machine is then used to learn the models of the dataset. It is then used for movie recommendation system accordingly to the user watched movies.
 
